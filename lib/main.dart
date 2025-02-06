@@ -1,6 +1,7 @@
 import 'package:chat_app/firebase_options.dart';
 import 'package:chat_app/screens/auth/sign%20in%20and%20sign%20up/sign_in_page.dart';
 import 'package:chat_app/screens/auth/sign%20in%20and%20sign%20up/sign_up_page.dart';
+import 'package:chat_app/screens/flash_screen.dart';
 import 'package:chat_app/screens/floating%20bottom%20bar/floating_bottom_bar.dart';
 import 'package:chat_app/screens/home%20page/chat_page.dart';
 import 'package:chat_app/screens/home%20page/home_page.dart';
@@ -34,6 +35,10 @@ class _ChatAppState extends State<ChatApp> {
       getPages: [
         GetPage(
           name: '/',
+          page: () => const FlashScreen(),
+        ),
+        GetPage(
+          name: '/auth',
           page: () => (Auth.auth.currentUser() == null)
               ? const SignInPage()
               : const FloatingBottomBar(),

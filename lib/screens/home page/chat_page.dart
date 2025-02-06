@@ -59,26 +59,13 @@ class _ChatPageState extends State<ChatPage> {
             const SizedBox(
               width: 10,
             ),
-            Column(
-              children: [
-                Text(
-                  chatController.receiverName.value,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: .5,
-                  ),
-                ),
-                const Text(
-                  "deep",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: .2,
-                  ),
-                )
-              ],
+            Text(
+              chatController.receiverName.value,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                letterSpacing: .5,
+              ),
             ),
           ],
         ),
