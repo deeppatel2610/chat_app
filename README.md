@@ -89,7 +89,7 @@ This project is licensed under the MIT License.
 ## Contact
 For any queries, feel free to reach out:
 - GitHub: [deeppatel2610](https://github.com/deeppatel2610)
-- Email: [Your Email Here]
+- Email: [Deep Patel](deeppatel100267@gmail.com)
 
 Happy coding! 🚀
 
