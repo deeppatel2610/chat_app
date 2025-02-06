@@ -1,6 +1,5 @@
 import 'package:chat_app/model/user_profile_model.dart';
 import 'package:chat_app/screens/all%20page%20use%20components/app_bar_method.dart';
-import 'package:chat_app/screens/home%20page/chat_page.dart';
 import 'package:chat_app/services/Auth/auth.dart';
 import 'package:chat_app/services/fire%20store/fire_store.dart';
 import 'package:chat_app/utiitsl/my_color.dart';
@@ -58,11 +57,7 @@ class HomePage extends StatelessWidget {
                       users[index].email!,
                     );
                     chatController.storeImage(users[index].userImage!);
-                    Get.to(
-                      const ChatPage(),
-                      transition: Transition.rightToLeftWithFade,
-                      duration: const Duration(milliseconds: 600),
-                    );
+                    Get.toNamed("/chatPage");
                   },
                   child: showUserMethod(
                     currentUser: currentUser,

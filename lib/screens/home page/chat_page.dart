@@ -9,8 +9,32 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'component/pop_menu_method.dart';
 
-class ChatPage extends StatelessWidget {
+class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
+
+  @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print("deep");
+
+    FireStore.fireStore.editOnlineAndOffline(
+        email: Auth.auth.currentUser()!.email.toString(), isOnline: true);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    print("deep patel");
+    FireStore.fireStore.editOnlineAndOffline(
+        email: Auth.auth.currentUser()!.email.toString(), isOnline: false);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +69,7 @@ class ChatPage extends StatelessWidget {
                     letterSpacing: .5,
                   ),
                 ),
-                Text(
+                const Text(
                   "deep",
                   style: TextStyle(
                     color: Colors.white70,

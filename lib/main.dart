@@ -9,8 +9,6 @@ import 'package:chat_app/screens/settings%20page/settings_page.dart';
 import 'package:chat_app/screens/status%20page/status_page.dart';
 import 'package:chat_app/screens/voice%20and%20video%20call/voice_and_video_call.dart';
 import 'package:chat_app/services/Auth/auth.dart';
-import 'package:chat_app/online_and_offline.dart';
-import 'package:chat_app/services/fire%20store/fire_store.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,17 +27,6 @@ class ChatApp extends StatefulWidget {
 }
 
 class _ChatAppState extends State<ChatApp> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    print("deep");
-    FireStore.fireStore.editOnlineAndOffline(
-      email: Auth.auth.currentUser()!.email.toString(),
-      isOnline: true,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -84,17 +71,6 @@ class _ChatAppState extends State<ChatApp> {
           page: () => const ProfileEditPage(),
         ),
       ],
-    );
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    print("deep");
-    FireStore.fireStore.editOnlineAndOffline(
-      email: Auth.auth.currentUser()!.email.toString(),
-      isOnline: false,
     );
   }
 }
